@@ -16,7 +16,7 @@ const API_KEY= '9450466f'
       fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
         .then(res => res.json())
         .then(results => {
-          const { Search } = results
+          const { Search = [] } = results
           this.props.onResults(Search)
         })
     }
